@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DARK NIGHT | Loja</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, #242424 0%, #0c0c0c 45%, #030303 100%);
+    color: white;
+}
+
+/* TOPO */
+
+header {
+    text-align: center;
+    padding: 45px 20px 35px;
+    border-bottom: 1px solid #292929;
+}
+
+.logo {
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    text-shadow: 0 0 25px #777;
+}
+
+.subtitle {
+    color: #999;
+    margin-top: 8px;
+}
+
+/* CONTEÚDO */
+
+.container {
+    width: 92%;
+    max-width: 1150px;
+    margin: 35px auto;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+/* KITS */
+
+.kits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.kit {
+    background: linear-gradient(145deg, #191919, #0b0b0b);
+    border: 1px solid #303030;
+    border-radius: 16px;
+    padding: 25px 20px;
+    text-align: center;
+    transition: .25s;
+    box-shadow: 0 12px 30px rgba(0,0,0,.4);
+}
+
+.kit:hover {
+    transform: translateY(-6px);
+    border-color: #777;
+}
+
+.icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.kit h2 {
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 18px 0;
+}
+
+.buy {
+    width: 100%;
+    border: none;
+    border-radius: 9px;
+    padding: 13px;
+    background: linear-gradient(90deg, #333, #777);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.buy:hover {
+    transform: scale(1.03);
+    filter: brightness(1.2);
+}
+
+/* MODAL */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.82);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-box {
+    width: 100%;
+    max-width: 430px;
+    background: #111;
+    border: 1px solid #444;
+    border-radius: 17px;
+    padding: 28px;
+    box-shadow: 0 20px 60px #000;
+}
+
+.modal-box h2 {
+    margin-bottom: 8px;
+}
+
+.description {
+    color: #999;
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    color: #ccc;
+    margin-bottom: 7px;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 17px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background: #1b1b1b;
+    color: white;
+    font-size: 15px;
+    outline: none;
+}
+
+.total {
+    font-size: 22px;
+    margin: 5px 0 20px;
+}
+
+.confirm {
+    width: 100%;
+    border: none;
+    border-radius: 9px;
+    padding: 14px;
+    background: linear-gradient(90deg, #333, #777);
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cancel {
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+    border-radius: 9px;
+    padding: 12px;
+    background: #252525;
+    color: #aaa;
+    cursor: pointer;
+}
+
+/* RODAPÉ */
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #666;
+    font-size: 13px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">DARK NIGHT</div>
+    <div class="subtitle">Loja oficial • Kits PvP</div>
+</header>
+
+<div class="container">
+
+    <h1 class="title">⚔️ KITS DARK NIGHT</h1>
+
+    <div class="kits">
+
+        <div class="kit">
+            <div class="icon">💎</div>
+            <h2>Kit Dima</h2>
+            <div class="price">R$ 2,00</div>
+            <button class="buy" onclick="abrirCompra('Kit Dima', 2)">
+                COMPRAR
+            </button>
+        </div>
+
+        <div class="kit">
+            <div class="icon">💎</div>
+            <h2>Kit Dima Ultra</h2>
+            <div class="price">R$ 4,00</div>
+            <button class="buy" onclick="abrirCompra('Kit Dima Ultra', 4)">
+                COMPRAR
+            </button>
+        </div>
+
+        <div class="kit">
+            <div class="icon">🔥</div>
+            <h2>Kit Nether</h2>
+            <div class="price">R$ 7,00</div>
+            <button class="buy" onclick="abrirCompra('Kit Nether', 7)">
+                COMPRAR
+            </button>
+        </div>
+
+        <div class="kit">
+            <div class="icon">🔥</div>
+            <h2>Kit Nether Ultra</h2>
+            <div class="price">R$ 9,00</div>
+            <button class="buy" onclick="abrirCompra('Kit Nether Ultra', 9)">
+                COMPRAR
+            </button>
+        </div>
+
+        <div class="kit">
+            <div class="icon">⚔️</div>
+            <h2>Kit PvP</h2>
+            <div class="price">R$ 11,50</div>
+            <button class="buy" onclick="abrirCompra('Kit PvP', 11.50)">
+                COMPRAR
+            </button>
+        </div>
+
+        <div class="kit">
+            <div class="icon">👥</div>
+            <h2>Kit Duo</h2>
+            <div class="price">R$ 15,00</div>
+            <button class="buy" onclick="abrirCompra('Kit Duo', 15)">
+                COMPRAR
+            </button>
+        </div>
+
+        <div class="kit">
+            <div class="icon">👥</div>
+            <h2>Kit Trio</h2>
+            <div class="price">R$ 20,00</div>
+            <button class="buy" onclick="abrirCompra('Kit Trio', 20)">
+                COMPRAR
+            </button>
+        </div>
+
+        <div class="kit">
+            <div class="icon">👥</div>
+            <h2>Kit Squad</h2>
+            <div class="price">R$ 30,00</div>
+            <button class="buy" onclick="abrirCompra('Kit Squad', 30)">
+                COMPRAR
+            </button>
+        </div>
+
+        <div class="kit">
+            <div class="icon">🛡️</div>
+            <h2>Kit Clã</h2>
+            <div class="price">R$ 40,00</div>
+            <button class="buy" onclick="abrirCompra('Kit Clã', 40)">
+                COMPRAR
+            </button>
+        </div>
+
+        <div class="kit">
+            <div class="icon">👑</div>
+            <h2>Kit Super Clã</h2>
+            <div class="price">R$ 65,00</div>
+            <button class="buy" onclick="abrirCompra('Kit Super Clã', 65)">
+                COMPRAR
+            </button>
+        </div>
+
+        <div class="kit">
+            <div class="icon">🌌</div>
+            <h2>Kit Astraly</h2>
+            <div class="price">R$ 75,00</div>
+            <button class="buy" onclick="abrirCompra('Kit Astraly', 75)">
+                COMPRAR
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    DARK NIGHT © 2026 • Loja oficial
+</footer>
+
+
+<!-- JANELA DE COMPRA -->
+
+<div class="modal" id="modal">
+
+    <div class="modal-box">
+
+        <h2 id="nomeKit">Comprar Kit</h2>
+
+        <p class="description">
+            Informe seu nick e a quantidade.
+        </p>
+
+        <label for="nick">Nick do Minecraft</label>
+
+        <input
+            id="nick"
+            type="text"
+            placeholder="Digite seu nick"
+        >
+
+        <label for="quantidade">Quantidade</label>
+
+        <input
+            id="quantidade"
+            type="number"
+            min="1"
+            value="1"
+            onchange="atualizarTotal()"
+            oninput="atualizarTotal()"
+        >
+
+        <div class="total">
+            Total:
+            <strong id="total">R$ 0,00</strong>
+        </div>
+
+        <button class="confirm" onclick="finalizarCompra()">
+            CONTINUAR
+        </button>
+
+        <button class="cancel" onclick="fecharCompra()">
+            CANCELAR
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+let kitSelecionado = "";
+let precoSelecionado = 0;
+
+
+/* ABRIR COMPRA */
+
+function abrirCompra(nome, preco) {
+
+    kitSelecionado = nome;
+    precoSelecionado = preco;
+
+    document.getElementById("nomeKit").innerText = nome;
+
+    document.getElementById("quantidade").value = 1;
+
+    document.getElementById("nick").value = "";
+
+    atualizarTotal();
+
+    document.getElementById("modal").style.display = "flex";
+}
+
+
+/* CALCULAR TOTAL */
+
+function atualizarTotal() {
+
+    let quantidade =
+        Number(document.getElementById("quantidade").value);
+
+    if (quantidade < 1 || isNaN(quantidade)) {
+        quantidade = 1;
+    }
+
+    let total = precoSelecionado * quantidade;
+
+    document.getElementById("total").innerText =
+        "R$ " + total.toFixed(2).replace(".", ",");
+}
+
+
+/* FECHAR */
+
+function fecharCompra() {
+
+    document.getElementById("modal").style.display = "none";
+}
+
+
+/* FINALIZAR */
+
+function finalizarCompra() {
+
+    let nick =
+        document.getElementById("nick").value.trim();
+
+    let quantidade =
+        Number(document.getElementById("quantidade").value);
+
+    if (nick === "") {
+
+        alert("Digite seu nick do Minecraft!");
+
+        return;
+    }
+
+    if (quantidade < 1) {
+
+        alert("A quantidade precisa ser pelo menos 1!");
+
+        return;
+    }
+
+    let total =
+        precoSelecionado * quantidade;
+
+    alert(
+        "PEDIDO DARK NIGHT\n\n" +
+        "Kit: " + kitSelecionado + "\n" +
+        "Nick: " + nick + "\n" +
+        "Quantidade: " + quantidade + "\n" +
+        "Total: R$ " +
+        total.toFixed(2).replace(".", ",")
+    );
+}
+
+
+/* FECHAR CLICANDO FORA */
+
+document.getElementById("modal").addEventListener(
+    "click",
+    function(event) {
+
+        if (event.target === this) {
+            fecharCompra();
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
