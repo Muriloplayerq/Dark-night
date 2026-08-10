@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>DARK NIGHT | Loja</title>
-
-<style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>DARK NIGHT | Loja</title><style>
 * {
     margin: 0;
     padding: 0;
@@ -90,12 +85,12 @@ header {
 
 .buy,
 .confirm,
-.pix-button {
+.pix-button,
+.discord-button {
     width: 100%;
     border: none;
     border-radius: 9px;
     padding: 13px;
-    background: linear-gradient(90deg, #333, #777);
     color: white;
     font-size: 16px;
     font-weight: bold;
@@ -103,11 +98,26 @@ header {
     transition: .2s;
 }
 
+.buy,
+.confirm {
+    background: linear-gradient(90deg, #333, #777);
+}
+
+.pix-button {
+    background: linear-gradient(90deg, #075e32, #13a85c);
+}
+
+.discord-button {
+    background: linear-gradient(90deg, #5865F2, #7289da);
+    margin-top: 10px;
+}
+
 .buy:hover,
 .confirm:hover,
-.pix-button:hover {
+.pix-button:hover,
+.discord-button:hover {
     transform: scale(1.03);
-    filter: brightness(1.2);
+    filter: brightness(1.15);
 }
 
 .modal {
@@ -124,6 +134,8 @@ header {
 .modal-box {
     width: 100%;
     max-width: 430px;
+    max-height: 90vh;
+    overflow-y: auto;
     background: #111;
     border: 1px solid #444;
     border-radius: 17px;
@@ -138,6 +150,7 @@ header {
 .description {
     color: #999;
     margin-bottom: 22px;
+    line-height: 1.5;
 }
 
 label {
@@ -201,11 +214,31 @@ input {
     color: #ddd;
 }
 
+.instructions {
+    background: #181818;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    color: #bbb;
+    line-height: 1.6;
+}
+
 .success {
     text-align: center;
     color: #aaa;
     line-height: 1.6;
     margin: 15px 0;
+}
+
+.order-code {
+    text-align: center;
+    background: #080808;
+    border: 1px dashed #555;
+    border-radius: 10px;
+    padding: 12px;
+    margin: 15px 0;
+    color: #ddd;
 }
 
 footer {
@@ -214,231 +247,225 @@ footer {
     color: #666;
     font-size: 13px;
 }
-</style>
-</head>
-
-<body>
-
-<header>
+</style></head><body><header>
     <div class="logo">DARK NIGHT</div>
     <div class="subtitle">Loja oficial • Kits PvP</div>
-</header>
+</header><div class="container"><h1 class="title">⚔️ KITS DARK NIGHT</h1>
 
-<div class="container">
+<div class="kits">
 
-    <h1 class="title">⚔️ KITS DARK NIGHT</h1>
-
-    <div class="kits">
-
-        <div class="kit">
-            <div class="icon">💎</div>
-            <h2>Kit Dima</h2>
-            <div class="price">R$ 2,00</div>
-            <button class="buy" onclick="abrirCompra('Kit Dima', 2)">COMPRAR</button>
-        </div>
-
-        <div class="kit">
-            <div class="icon">💎</div>
-            <h2>Kit Dima Ultra</h2>
-            <div class="price">R$ 4,00</div>
-            <button class="buy" onclick="abrirCompra('Kit Dima Ultra', 4)">COMPRAR</button>
-        </div>
-
-        <div class="kit">
-            <div class="icon">🔥</div>
-            <h2>Kit Nether</h2>
-            <div class="price">R$ 7,00</div>
-            <button class="buy" onclick="abrirCompra('Kit Nether', 7)">COMPRAR</button>
-        </div>
-
-        <div class="kit">
-            <div class="icon">🔥</div>
-            <h2>Kit Nether Ultra</h2>
-            <div class="price">R$ 9,00</div>
-            <button class="buy" onclick="abrirCompra('Kit Nether Ultra', 9)">COMPRAR</button>
-        </div>
-
-        <div class="kit">
-            <div class="icon">⚔️</div>
-            <h2>Kit PvP</h2>
-            <div class="price">R$ 11,50</div>
-            <button class="buy" onclick="abrirCompra('Kit PvP', 11.50)">COMPRAR</button>
-        </div>
-
-        <div class="kit">
-            <div class="icon">👥</div>
-            <h2>Kit Duo</h2>
-            <div class="price">R$ 15,00</div>
-            <button class="buy" onclick="abrirCompra('Kit Duo', 15)">COMPRAR</button>
-        </div>
-
-        <div class="kit">
-            <div class="icon">👥</div>
-            <h2>Kit Trio</h2>
-            <div class="price">R$ 20,00</div>
-            <button class="buy" onclick="abrirCompra('Kit Trio', 20)">COMPRAR</button>
-        </div>
-
-        <div class="kit">
-            <div class="icon">👥</div>
-            <h2>Kit Squad</h2>
-            <div class="price">R$ 30,00</div>
-            <button class="buy" onclick="abrirCompra('Kit Squad', 30)">COMPRAR</button>
-        </div>
-
-        <div class="kit">
-            <div class="icon">🛡️</div>
-            <h2>Kit Clã</h2>
-            <div class="price">R$ 40,00</div>
-            <button class="buy" onclick="abrirCompra('Kit Clã', 40)">COMPRAR</button>
-        </div>
-
-        <div class="kit">
-            <div class="icon">👑</div>
-            <h2>Kit Super Clã</h2>
-            <div class="price">R$ 65,00</div>
-            <button class="buy" onclick="abrirCompra('Kit Super Clã', 65)">COMPRAR</button>
-        </div>
-
-        <div class="kit">
-            <div class="icon">🌌</div>
-            <h2>Kit Astraly</h2>
-            <div class="price">R$ 75,00</div>
-            <button class="buy" onclick="abrirCompra('Kit Astraly', 75)">COMPRAR</button>
-        </div>
-
+    <div class="kit">
+        <div class="icon">💎</div>
+        <h2>Kit Dima</h2>
+        <div class="price">R$ 2,00</div>
+        <button class="buy" onclick="abrirCompra('Kit Dima', 2)">COMPRAR</button>
     </div>
+
+    <div class="kit">
+        <div class="icon">💎</div>
+        <h2>Kit Dima Ultra</h2>
+        <div class="price">R$ 4,00</div>
+        <button class="buy" onclick="abrirCompra('Kit Dima Ultra', 4)">COMPRAR</button>
+    </div>
+
+    <div class="kit">
+        <div class="icon">🔥</div>
+        <h2>Kit Nether</h2>
+        <div class="price">R$ 7,00</div>
+        <button class="buy" onclick="abrirCompra('Kit Nether', 7)">COMPRAR</button>
+    </div>
+
+    <div class="kit">
+        <div class="icon">🔥</div>
+        <h2>Kit Nether Ultra</h2>
+        <div class="price">R$ 9,00</div>
+        <button class="buy" onclick="abrirCompra('Kit Nether Ultra', 9)">COMPRAR</button>
+    </div>
+
+    <div class="kit">
+        <div class="icon">⚔️</div>
+        <h2>Kit PvP</h2>
+        <div class="price">R$ 11,50</div>
+        <button class="buy" onclick="abrirCompra('Kit PvP', 11.50)">COMPRAR</button>
+    </div>
+
+    <div class="kit">
+        <div class="icon">👥</div>
+        <h2>Kit Duo</h2>
+        <div class="price">R$ 15,00</div>
+        <button class="buy" onclick="abrirCompra('Kit Duo', 15)">COMPRAR</button>
+    </div>
+
+    <div class="kit">
+        <div class="icon">👥</div>
+        <h2>Kit Trio</h2>
+        <div class="price">R$ 20,00</div>
+        <button class="buy" onclick="abrirCompra('Kit Trio', 20)">COMPRAR</button>
+    </div>
+
+    <div class="kit">
+        <div class="icon">👥</div>
+        <h2>Kit Squad</h2>
+        <div class="price">R$ 30,00</div>
+        <button class="buy" onclick="abrirCompra('Kit Squad', 30)">COMPRAR</button>
+    </div>
+
+    <div class="kit">
+        <div class="icon">🛡️</div>
+        <h2>Kit Clã</h2>
+        <div class="price">R$ 40,00</div>
+        <button class="buy" onclick="abrirCompra('Kit Clã', 40)">COMPRAR</button>
+    </div>
+
+    <div class="kit">
+        <div class="icon">👑</div>
+        <h2>Kit Super Clã</h2>
+        <div class="price">R$ 65,00</div>
+        <button class="buy" onclick="abrirCompra('Kit Super Clã', 65)">COMPRAR</button>
+    </div>
+
+    <div class="kit">
+        <div class="icon">🌌</div>
+        <h2>Kit Astraly</h2>
+        <div class="price">R$ 75,00</div>
+        <button class="buy" onclick="abrirCompra('Kit Astraly', 75)">COMPRAR</button>
+    </div>
+
 </div>
 
-<footer>
+</div><footer>
     DARK NIGHT © 2026 • Loja oficial
-</footer>
+</footer><!-- MODAL DE COMPRA --><div class="modal" id="modalCompra">
+    <div class="modal-box">    <h2 id="nomeKit">Comprar Kit</h2>
 
+    <p class="description">
+        Informe seu nick do Minecraft e a quantidade desejada.
+    </p>
 
-<!-- MODAL DE COMPRA -->
+    <label for="nick">Nick do Minecraft</label>
 
-<div class="modal" id="modalCompra">
+    <input
+        id="nick"
+        type="text"
+        maxlength="30"
+        placeholder="Digite seu nick"
+    >
 
-    <div class="modal-box">
+    <label for="quantidade">Quantidade</label>
 
-        <h2 id="nomeKit">Comprar Kit</h2>
+    <input
+        id="quantidade"
+        type="number"
+        min="1"
+        value="1"
+        oninput="atualizarTotal()"
+    >
 
-        <p class="description">
-            Informe seu nick e a quantidade.
-        </p>
+    <div class="total">
+        Total:
+        <strong id="total">R$ 0,00</strong>
+    </div>
 
-        <label for="nick">Nick do Minecraft</label>
+    <button class="confirm" onclick="finalizarCompra()">
+        CONTINUAR
+    </button>
 
-        <input
-            id="nick"
-            type="text"
-            placeholder="Digite seu nick"
-        >
+    <button class="cancel" onclick="fecharCompra()">
+        CANCELAR
+    </button>
 
-        <label for="quantidade">Quantidade</label>
+</div>
 
-        <input
-            id="quantidade"
-            type="number"
-            min="1"
-            value="1"
-            oninput="atualizarTotal()"
-        >
+</div><!-- MODAL RESUMO --><div class="modal" id="modalResumo">
+    <div class="modal-box">    <h2>📋 Resumo do pedido</h2>
 
-        <div class="total">
-            Total:
-            <strong id="total">R$ 0,00</strong>
+    <div class="summary">
+        <div><strong>Kit:</strong> <span id="resumoKit"></span></div>
+        <div><strong>Nick:</strong> <span id="resumoNick"></span></div>
+        <div><strong>Quantidade:</strong> <span id="resumoQuantidade"></span></div>
+        <div><strong>Total:</strong> <span id="resumoTotal"></span></div>
+    </div>
+
+    <button class="confirm" onclick="irParaPix()">
+        💠 IR PARA PAGAMENTO
+    </button>
+
+    <button class="cancel" onclick="voltarCompra()">
+        VOLTAR
+    </button>
+
+</div>
+
+</div><!-- MODAL PIX --><div class="modal" id="modalPix">
+    <div class="modal-box">    <h2>💠 Pagamento via Pix</h2>
+
+    <p class="description">
+        Faça o Pix exatamente no valor indicado abaixo.
+    </p>
+
+    <div class="summary">
+        <div><strong>Kit:</strong> <span id="pixKit"></span></div>
+        <div><strong>Nick:</strong> <span id="pixNick"></span></div>
+        <div><strong>Quantidade:</strong> <span id="pixQuantidade"></span></div>
+        <div><strong>Valor:</strong> <span id="pixTotal"></span></div>
+    </div>
+
+    <div class="pix-box">
+
+        <strong>Chave Pix:</strong>
+
+        <div class="pix-key" id="pixKey">
+            437144b6-5d40-4f01-b803-c33d1bf041c0
         </div>
 
-        <button class="confirm" onclick="finalizarCompra()">
-            CONTINUAR
-        </button>
-
-        <button class="cancel" onclick="fecharCompra()">
-            CANCELAR
+        <button class="pix-button" onclick="copiarPix()">
+            📋 COPIAR CHAVE PIX
         </button>
 
     </div>
 
-</div>
-
-
-<!-- MODAL DE RESUMO -->
-
-<div class="modal" id="modalResumo">
-
-    <div class="modal-box">
-
-        <h2>📋 Resumo do pedido</h2>
-
-        <div class="summary">
-            <div><strong>Kit:</strong> <span id="resumoKit"></span></div>
-            <div><strong>Nick:</strong> <span id="resumoNick"></span></div>
-            <div><strong>Quantidade:</strong> <span id="resumoQuantidade"></span></div>
-            <div><strong>Total:</strong> <span id="resumoTotal"></span></div>
-        </div>
-
-        <button class="confirm" onclick="irParaPix()">
-            OK, CONTINUAR PARA PAGAMENTO
-        </button>
-
-        <button class="cancel" onclick="voltarCompra()">
-            VOLTAR
-        </button>
-
+    <div class="order-code">
+        <strong>Número do pedido:</strong>
+        <span id="numeroPedido"></span>
     </div>
 
-</div>
+    <div class="instructions">
+        <strong>Depois de pagar:</strong><br><br>
 
-
-<!-- MODAL PIX -->
-
-<div class="modal" id="modalPix">
-
-    <div class="modal-box">
-
-        <h2>💠 Pagamento via Pix</h2>
-
-        <p class="description">
-            Faça o Pix no valor indicado abaixo.
-        </p>
-
-        <div class="summary">
-            <div><strong>Kit:</strong> <span id="pixKit"></span></div>
-            <div><strong>Nick:</strong> <span id="pixNick"></span></div>
-            <div><strong>Quantidade:</strong> <span id="pixQuantidade"></span></div>
-            <div><strong>Valor:</strong> <span id="pixTotal"></span></div>
-        </div>
-
-        <div class="pix-box">
-
-            <strong>Chave Pix:</strong>
-
-            <div class="pix-key" id="pixKey">
-                437144b6-5d40-4f01-b803-c33d1bf041c0
-            </div>
-
-            <button class="pix-button" onclick="copiarPix()">
-                📋 COPIAR CHAVE PIX
-            </button>
-
-        </div>
-
-        <div class="success">
-            Depois de realizar o pagamento, envie o comprovante
-            para a administração do DARK NIGHT para liberar o kit.
-        </div>
-
-        <button class="cancel" onclick="fecharPix()">
-            FECHAR
-        </button>
-
+        1. Tire o comprovante do Pix.<br>
+        2. Clique em <strong>ENVIAR COMPROVANTE</strong>.<br>
+        3. Entre no servidor do Discord.<br>
+        4. Abra um ticket de compra.<br>
+        5. Envie o comprovante junto com o número do pedido.
     </div>
 
+    <button class="discord-button" onclick="abrirDiscord()">
+        🎫 ENVIAR COMPROVANTE NO TICKET
+    </button>
+
+    <div class="success">
+        O kit será entregue após a administração confirmar o pagamento.
+    </div>
+
+    <button class="cancel" onclick="fecharPix()">
+        FECHAR
+    </button>
+
 </div>
 
+</div><script>
 
-<script>
+/*
+==================================================
+CONFIGURAÇÃO
+==================================================
+COLOQUE AQUI O LINK DE CONVITE DO SEU DISCORD.
+Exemplo:
+https://discord.gg/SEUCONVITE
+*/
+
+const DISCORD_LINK = "COLOQUE-SEU-LINK-DO-DISCORD-AQUI";
+
 
 let kitSelecionado = "";
 let precoSelecionado = 0;
@@ -446,7 +473,8 @@ let precoSelecionado = 0;
 let pedido = {
     nick: "",
     quantidade: 1,
-    total: 0
+    total: 0,
+    numero: ""
 };
 
 
@@ -476,11 +504,14 @@ function atualizarTotal() {
         Number(document.getElementById("quantidade").value);
 
     if (!Number.isInteger(quantidade) || quantidade < 1) {
+
         quantidade = 1;
+
         document.getElementById("quantidade").value = 1;
     }
 
-    let total = precoSelecionado * quantidade;
+    let total =
+        precoSelecionado * quantidade;
 
     document.getElementById("total").innerText =
         formatarPreco(total);
@@ -496,6 +527,22 @@ function formatarPreco(valor) {
 }
 
 
+/* GERAR NÚMERO DO PEDIDO */
+
+function gerarNumeroPedido() {
+
+    const agora = Date.now().toString();
+
+    const aleatorio =
+        Math.floor(100 + Math.random() * 900);
+
+    return "DN-" +
+        agora.slice(-6) +
+        "-" +
+        aleatorio;
+}
+
+
 /* FECHAR COMPRA */
 
 function fecharCompra() {
@@ -504,7 +551,7 @@ function fecharCompra() {
 }
 
 
-/* CONTINUAR */
+/* FINALIZAR COMPRA */
 
 function finalizarCompra() {
 
@@ -515,12 +562,16 @@ function finalizarCompra() {
         Number(document.getElementById("quantidade").value);
 
     if (nick === "") {
+
         alert("Digite seu nick do Minecraft!");
+
         return;
     }
 
     if (!Number.isInteger(quantidade) || quantidade < 1) {
+
         alert("A quantidade precisa ser pelo menos 1!");
+
         return;
     }
 
@@ -530,6 +581,8 @@ function finalizarCompra() {
     pedido.nick = nick;
     pedido.quantidade = quantidade;
     pedido.total = total;
+    pedido.numero = gerarNumeroPedido();
+
 
     document.getElementById("resumoKit").innerText =
         kitSelecionado;
@@ -543,6 +596,7 @@ function finalizarCompra() {
     document.getElementById("resumoTotal").innerText =
         formatarPreco(total);
 
+
     document.getElementById("modalCompra").style.display = "none";
 
     document.getElementById("modalResumo").style.display = "flex";
@@ -555,6 +609,7 @@ function irParaPix() {
 
     document.getElementById("modalResumo").style.display = "none";
 
+
     document.getElementById("pixKit").innerText =
         kitSelecionado;
 
@@ -566,6 +621,10 @@ function irParaPix() {
 
     document.getElementById("pixTotal").innerText =
         formatarPreco(pedido.total);
+
+    document.getElementById("numeroPedido").innerText =
+        pedido.numero;
+
 
     document.getElementById("modalPix").style.display = "flex";
 }
@@ -588,17 +647,53 @@ function copiarPix() {
     let chave =
         document.getElementById("pixKey").innerText.trim();
 
-    navigator.clipboard.writeText(chave)
-        .then(function() {
+    if (navigator.clipboard) {
 
-            alert("Chave Pix copiada!");
+        navigator.clipboard.writeText(chave)
+            .then(function() {
 
-        })
-        .catch(function() {
+                alert("✅ Chave Pix copiada!");
 
-            alert("Não foi possível copiar automaticamente. Segure na chave para copiar.");
+            })
+            .catch(function() {
 
-        });
+                alert(
+                    "Não foi possível copiar automaticamente. " +
+                    "Segure na chave para copiar."
+                );
+
+            });
+
+    } else {
+
+        alert(
+            "Segure na chave Pix para copiar."
+        );
+    }
+}
+
+
+/* ABRIR DISCORD */
+
+function abrirDiscord() {
+
+    if (
+        DISCORD_LINK ===
+        "https://discord.gg/rhFyAZpp7"
+    ) {
+
+        alert(
+            "⚠️ Primeiro coloque o link do seu servidor Discord no código."
+        );
+
+        return;
+    }
+
+
+    window.open(
+        DISCORD_LINK,
+        "_blank"
+    );
 }
 
 
@@ -610,36 +705,40 @@ function fecharPix() {
 }
 
 
-/* FECHAR MODAIS CLICANDO FORA */
+/* FECHAR CLICANDO FORA */
 
-document.getElementById("modalCompra").addEventListener(
-    "click",
-    function(event) {
-        if (event.target === this) {
-            fecharCompra();
-        }
+document.getElementById("modalCompra")
+.addEventListener("click", function(event) {
+
+    if (event.target === this) {
+
+        fecharCompra();
     }
-);
 
-document.getElementById("modalResumo").addEventListener(
-    "click",
-    function(event) {
-        if (event.target === this) {
-            document.getElementById("modalResumo").style.display = "none";
-        }
+});
+
+
+document.getElementById("modalResumo")
+.addEventListener("click", function(event) {
+
+    if (event.target === this) {
+
+        document.getElementById("modalResumo").style.display = "none";
     }
-);
 
-document.getElementById("modalPix").addEventListener(
-    "click",
-    function(event) {
-        if (event.target === this) {
-            fecharPix();
-        }
+});
+
+
+document.getElementById("modalPix")
+.addEventListener("click", function(event) {
+
+    if (event.target === this) {
+
+        fecharPix();
     }
-);
 
-</script>
+});
 
-</body>
-    </html>
+
+</script></body>
+</html>
