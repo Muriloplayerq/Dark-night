@@ -702,7 +702,6 @@ footer {
 
 /* =====================================================
    🎟️ SEUS CUPONS
-   COLOQUE SEUS CUPONS AQUI
    ===================================================== */
 
 const CUPONS = {
@@ -846,6 +845,16 @@ function calcularValores() {
             document.getElementById("quantidade")
                 .value
         );
+
+
+    if (
+        !Number.isInteger(quantidade) ||
+        quantidade < 1
+    ) {
+
+        quantidade = 1;
+
+    }
 
 
     let subtotal =
@@ -1177,12 +1186,4 @@ function finalizarCompra() {
 function irParaPix() {
 
     let valores =
-        calcularValores();
-
-
-    pedido.subtotal =
-        valores.subtotal;
-
-
-    pedido.desconto =
-        
+        calcularVa    
