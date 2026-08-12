@@ -1,7 +1,11 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>DARK NIGHT | Loja</title><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DARK NIGHT | Loja</title>
+
+<style>
 * {
     margin: 0;
     padding: 0;
@@ -85,8 +89,7 @@ header {
 
 .buy,
 .confirm,
-.pix-button,
-.discord-button {
+.pix-button {
     width: 100%;
     border: none;
     border-radius: 9px;
@@ -107,15 +110,9 @@ header {
     background: linear-gradient(90deg, #075e32, #13a85c);
 }
 
-.discord-button {
-    background: linear-gradient(90deg, #5865F2, #7289da);
-    margin-top: 10px;
-}
-
 .buy:hover,
 .confirm:hover,
-.pix-button:hover,
-.discord-button:hover {
+.pix-button:hover {
     transform: scale(1.03);
     filter: brightness(1.15);
 }
@@ -247,10 +244,19 @@ footer {
     color: #666;
     font-size: 13px;
 }
-</style></head><body><header>
+</style>
+</head>
+
+<body>
+
+<header>
     <div class="logo">DARK NIGHT</div>
     <div class="subtitle">Loja oficial • Kits PvP</div>
-</header><div class="container"><h1 class="title">⚔️ KITS DARK NIGHT</h1>
+</header>
+
+<div class="container">
+
+<h1 class="title">⚔️ KITS DARK NIGHT</h1>
 
 <div class="kits">
 
@@ -332,140 +338,206 @@ footer {
     </div>
 
 </div>
+</div>
 
-</div><footer>
+<footer>
     DARK NIGHT © 2026 • Loja oficial
-</footer><!-- MODAL DE COMPRA --><div class="modal" id="modalCompra">
-    <div class="modal-box">    <h2 id="nomeKit">Comprar Kit</h2>
+</footer>
 
-    <p class="description">
-        Informe seu nick do Minecraft e a quantidade desejada.
-    </p>
 
-    <label for="nick">Nick do Minecraft</label>
+<!-- MODAL DE COMPRA -->
 
-    <input
-        id="nick"
-        type="text"
-        maxlength="30"
-        placeholder="Digite seu nick"
-    >
+<div class="modal" id="modalCompra">
 
-    <label for="quantidade">Quantidade</label>
+    <div class="modal-box">
 
-    <input
-        id="quantidade"
-        type="number"
-        min="1"
-        value="1"
-        oninput="atualizarTotal()"
-    >
+        <h2 id="nomeKit">Comprar Kit</h2>
 
-    <div class="total">
-        Total:
-        <strong id="total">R$ 0,00</strong>
-    </div>
+        <p class="description">
+            Informe seu nick do Minecraft e a quantidade desejada.
+        </p>
 
-    <button class="confirm" onclick="finalizarCompra()">
-        CONTINUAR
-    </button>
+        <label for="nick">Nick do Minecraft</label>
 
-    <button class="cancel" onclick="fecharCompra()">
-        CANCELAR
-    </button>
+        <input
+            id="nick"
+            type="text"
+            maxlength="30"
+            placeholder="Digite seu nick"
+        >
 
-</div>
+        <label for="quantidade">Quantidade</label>
 
-</div><!-- MODAL RESUMO --><div class="modal" id="modalResumo">
-    <div class="modal-box">    <h2>📋 Resumo do pedido</h2>
+        <input
+            id="quantidade"
+            type="number"
+            min="1"
+            value="1"
+            oninput="atualizarTotal()"
+        >
 
-    <div class="summary">
-        <div><strong>Kit:</strong> <span id="resumoKit"></span></div>
-        <div><strong>Nick:</strong> <span id="resumoNick"></span></div>
-        <div><strong>Quantidade:</strong> <span id="resumoQuantidade"></span></div>
-        <div><strong>Total:</strong> <span id="resumoTotal"></span></div>
-    </div>
-
-    <button class="confirm" onclick="irParaPix()">
-        💠 IR PARA PAGAMENTO
-    </button>
-
-    <button class="cancel" onclick="voltarCompra()">
-        VOLTAR
-    </button>
-
-</div>
-
-</div><!-- MODAL PIX --><div class="modal" id="modalPix">
-    <div class="modal-box">    <h2>💠 Pagamento via Pix</h2>
-
-    <p class="description">
-        Faça o Pix exatamente no valor indicado abaixo.
-    </p>
-
-    <div class="summary">
-        <div><strong>Kit:</strong> <span id="pixKit"></span></div>
-        <div><strong>Nick:</strong> <span id="pixNick"></span></div>
-        <div><strong>Quantidade:</strong> <span id="pixQuantidade"></span></div>
-        <div><strong>Valor:</strong> <span id="pixTotal"></span></div>
-    </div>
-
-    <div class="pix-box">
-
-        <strong>Chave Pix:</strong>
-
-        <div class="pix-key" id="pixKey">
-            437144b6-5d40-4f01-b803-c33d1bf041c0
+        <div class="total">
+            Total:
+            <strong id="total">R$ 0,00</strong>
         </div>
 
-        <button class="pix-button" onclick="copiarPix()">
-            📋 COPIAR CHAVE PIX
+        <button class="confirm" onclick="finalizarCompra()">
+            CONTINUAR
+        </button>
+
+        <button class="cancel" onclick="fecharCompra()">
+            CANCELAR
         </button>
 
     </div>
 
-    <div class="order-code">
-        <strong>Número do pedido:</strong>
-        <span id="numeroPedido"></span>
+</div>
+
+
+<!-- MODAL RESUMO -->
+
+<div class="modal" id="modalResumo">
+
+    <div class="modal-box">
+
+        <h2>📋 Resumo do pedido</h2>
+
+        <div class="summary">
+
+            <div>
+                <strong>Kit:</strong>
+                <span id="resumoKit"></span>
+            </div>
+
+            <div>
+                <strong>Nick:</strong>
+                <span id="resumoNick"></span>
+            </div>
+
+            <div>
+                <strong>Quantidade:</strong>
+                <span id="resumoQuantidade"></span>
+            </div>
+
+            <div>
+                <strong>Total:</strong>
+                <span id="resumoTotal"></span>
+            </div>
+
+        </div>
+
+        <button class="confirm" onclick="irParaPix()">
+            💠 IR PARA PAGAMENTO
+        </button>
+
+        <button class="cancel" onclick="voltarCompra()">
+            VOLTAR
+        </button>
+
     </div>
-
-    <div class="instructions">
-        <strong>Depois de pagar:</strong><br><br>
-
-        1. Tire o comprovante do Pix.<br>
-        2. Clique em <strong>ENVIAR COMPROVANTE</strong>.<br>
-        3. Entre no servidor do Discord.<br>
-        4. Abra um ticket de compra.<br>
-        5. Envie o comprovante junto com o número do pedido.
-    </div>
-
-    <button class="discord-button" onclick="abrirDiscord()">
-        🎫 ENVIAR COMPROVANTE NO TICKET
-    </button>
-
-    <div class="success">
-        O kit será entregue após a administração confirmar o pagamento.
-    </div>
-
-    <button class="cancel" onclick="fecharPix()">
-        FECHAR
-    </button>
 
 </div>
 
-</div><script>
 
-/*
-==================================================
-CONFIGURAÇÃO
-==================================================
-COLOQUE AQUI O LINK DE CONVITE DO SEU DISCORD.
-Exemplo:
-https://discord.gg/SEUCONVITE
-*/
+<!-- MODAL PIX -->
 
-const DISCORD_LINK = "COLOQUE-SEU-LINK-DO-DISCORD-AQUI";
+<div class="modal" id="modalPix">
 
+    <div class="modal-box">
+
+        <h2>💠 Pagamento via Pix</h2>
+
+        <p class="description">
+            Faça o Pix exatamente no valor indicado abaixo.
+        </p>
+
+        <div class="summary">
+
+            <div>
+                <strong>Kit:</strong>
+                <span id="pixKit"></span>
+            </div>
+
+            <div>
+                <strong>Nick:</strong>
+                <span id="pixNick"></span>
+            </div>
+
+            <div>
+                <strong>Quantidade:</strong>
+                <span id="pixQuantidade"></span>
+            </div>
+
+            <div>
+                <strong>Valor:</strong>
+                <span id="pixTotal"></span>
+            </div>
+
+        </div>
+
+        <div class="pix-box">
+
+            <strong>Chave Pix:</strong>
+
+            <div class="pix-key" id="pixKey">
+                437144b6-5d40-4f01-b803-c33d1bf041c0
+            </div>
+
+            <button class="pix-button" onclick="copiarPix()">
+                📋 COPIAR CHAVE PIX
+            </button>
+
+        </div>
+
+        <div class="order-code">
+
+            <strong>Número do pedido:</strong>
+            <span id="numeroPedido"></span>
+
+        </div>
+
+        <!-- INSTRUÇÕES DE COMPROVANTE -->
+
+        <div class="instructions">
+
+            <strong>📋 Depois de realizar o pagamento:</strong>
+
+            <br><br>
+
+            1. Tire o comprovante do Pix.<br>
+
+            2. Entre no servidor oficial do Discord da
+            <strong>DARK NIGHT</strong>.<br>
+
+            3. Abra um <strong>ticket de compra</strong>.<br>
+
+            4. Envie o comprovante do Pix no ticket.<br>
+
+            5. Informe seu <strong>Nick do Minecraft</strong>.<br>
+
+            6. Informe o <strong>número do pedido</strong> acima.<br>
+
+            7. Aguarde um ADM verificar o pagamento e liberar seu kit.
+
+        </div>
+
+        <div class="success">
+
+            ⚠️ O kit será entregue somente após a administração
+            confirmar o pagamento.
+
+        </div>
+
+        <button class="cancel" onclick="fecharPix()">
+            FECHAR
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
 
 let kitSelecionado = "";
 let precoSelecionado = 0;
@@ -650,11 +722,13 @@ function copiarPix() {
     if (navigator.clipboard) {
 
         navigator.clipboard.writeText(chave)
+
             .then(function() {
 
                 alert("✅ Chave Pix copiada!");
 
             })
+
             .catch(function() {
 
                 alert(
@@ -670,30 +744,6 @@ function copiarPix() {
             "Segure na chave Pix para copiar."
         );
     }
-}
-
-
-/* ABRIR DISCORD */
-
-function abrirDiscord() {
-
-    if (
-        DISCORD_LINK ===
-        "https://discord.gg/rhFyAZpp7"
-    ) {
-
-        alert(
-            "⚠️ Primeiro coloque o link do seu servidor Discord no código."
-        );
-
-        return;
-    }
-
-
-    window.open(
-        DISCORD_LINK,
-        "_blank"
-    );
 }
 
 
@@ -739,6 +789,7 @@ document.getElementById("modalPix")
 
 });
 
+</script>
 
-</script></body>
-</html>
+</body>
+    </html>
