@@ -61,10 +61,11 @@ header {
     background: linear-gradient(145deg, #191919, #0b0b0b);
     border: 1px solid #303030;
     border-radius: 16px;
-    padding: 25px 20px;
+    padding: 15px;
     text-align: center;
     transition: .25s;
     box-shadow: 0 12px 30px rgba(0,0,0,.4);
+    overflow: hidden;
 }
 
 .kit:hover {
@@ -72,19 +73,14 @@ header {
     border-color: #777;
 }
 
-.icon {
-    font-size: 48px;
-    margin-bottom: 12px;
-}
-
 .kit-image {
     width: 100%;
-    height: 180px;
+    height: 190px;
     object-fit: contain;
-    background: #050505;
-    border: 1px solid #333;
+    background: #080808;
+    border: 1px solid #292929;
     border-radius: 12px;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 .kit h2 {
@@ -184,6 +180,26 @@ input {
     margin: 5px 0 20px;
 }
 
+.cancel {
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+    border-radius: 9px;
+    padding: 12px;
+    background: #252525;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.summary {
+    background: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 18px 0;
+    line-height: 1.8;
+}
+
 .coupon-box {
     background: #181818;
     border: 1px solid #333;
@@ -203,8 +219,8 @@ input {
 }
 
 .coupon-row input {
-    margin: 0;
     flex: 1;
+    margin: 0;
 }
 
 .coupon-button {
@@ -225,26 +241,6 @@ input {
 .discount {
     color: #36d66b;
     font-weight: bold;
-}
-
-.cancel {
-    width: 100%;
-    margin-top: 10px;
-    border: none;
-    border-radius: 9px;
-    padding: 12px;
-    background: #252525;
-    color: #aaa;
-    cursor: pointer;
-}
-
-.summary {
-    background: #1b1b1b;
-    border: 1px solid #333;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 18px 0;
-    line-height: 1.8;
 }
 
 .pix-box {
@@ -316,8 +312,7 @@ footer {
 <div class="kits">
 
     <div class="kit">
-        <img src="imagens/dima.png" class="kit-image" alt="Kit Dima">
-        <div class="icon">💎</div>
+        <img class="kit-image" src="imagens/dima.jpg" alt="Kit Dima">
         <h2>Kit Dima</h2>
         <div class="price">R$ 2,00</div>
         <button class="buy" onclick="abrirCompra('Kit Dima', 2)">
@@ -326,8 +321,7 @@ footer {
     </div>
 
     <div class="kit">
-        <img src="imagens/dima-ultra.png" class="kit-image" alt="Kit Dima Ultra">
-        <div class="icon">💎</div>
+        <img class="kit-image" src="imagens/dima_ultra.jpg" alt="Kit Dima Ultra">
         <h2>Kit Dima Ultra</h2>
         <div class="price">R$ 4,00</div>
         <button class="buy" onclick="abrirCompra('Kit Dima Ultra', 4)">
@@ -336,8 +330,7 @@ footer {
     </div>
 
     <div class="kit">
-        <img src="imagens/nether.png" class="kit-image" alt="Kit Nether">
-        <div class="icon">🔥</div>
+        <img class="kit-image" src="imagens/nether.jpg" alt="Kit Nether">
         <h2>Kit Nether</h2>
         <div class="price">R$ 7,00</div>
         <button class="buy" onclick="abrirCompra('Kit Nether', 7)">
@@ -346,8 +339,7 @@ footer {
     </div>
 
     <div class="kit">
-        <img src="imagens/nether-ultra.png" class="kit-image" alt="Kit Nether Ultra">
-        <div class="icon">🔥</div>
+        <img class="kit-image" src="imagens/nether_ultra.jpg" alt="Kit Nether Ultra">
         <h2>Kit Nether Ultra</h2>
         <div class="price">R$ 9,00</div>
         <button class="buy" onclick="abrirCompra('Kit Nether Ultra', 9)">
@@ -356,8 +348,7 @@ footer {
     </div>
 
     <div class="kit">
-        <img src="imagens/pvp.png" class="kit-image" alt="Kit PvP">
-        <div class="icon">⚔️</div>
+        <img class="kit-image" src="imagens/pvp.jpg" alt="Kit PvP">
         <h2>Kit PvP</h2>
         <div class="price">R$ 11,50</div>
         <button class="buy" onclick="abrirCompra('Kit PvP', 11.50)">
@@ -366,8 +357,7 @@ footer {
     </div>
 
     <div class="kit">
-        <img src="imagens/duo.png" class="kit-image" alt="Kit Duo">
-        <div class="icon">👥</div>
+        <img class="kit-image" src="imagens/duo.jpg" alt="Kit Duo">
         <h2>Kit Duo</h2>
         <div class="price">R$ 15,00</div>
         <button class="buy" onclick="abrirCompra('Kit Duo', 15)">
@@ -376,8 +366,7 @@ footer {
     </div>
 
     <div class="kit">
-        <img src="imagens/trio.png" class="kit-image" alt="Kit Trio">
-        <div class="icon">👥</div>
+        <img class="kit-image" src="imagens/trio.jpg" alt="Kit Trio">
         <h2>Kit Trio</h2>
         <div class="price">R$ 20,00</div>
         <button class="buy" onclick="abrirCompra('Kit Trio', 20)">
@@ -386,8 +375,7 @@ footer {
     </div>
 
     <div class="kit">
-        <img src="imagens/squad.png" class="kit-image" alt="Kit Squad">
-        <div class="icon">👥</div>
+        <img class="kit-image" src="imagens/squad.jpg" alt="Kit Squad">
         <h2>Kit Squad</h2>
         <div class="price">R$ 30,00</div>
         <button class="buy" onclick="abrirCompra('Kit Squad', 30)">
@@ -396,8 +384,7 @@ footer {
     </div>
 
     <div class="kit">
-        <img src="imagens/clan.png" class="kit-image" alt="Kit Clã">
-        <div class="icon">🛡️</div>
+        <img class="kit-image" src="imagens/cla.jpg" alt="Kit Clã">
         <h2>Kit Clã</h2>
         <div class="price">R$ 40,00</div>
         <button class="buy" onclick="abrirCompra('Kit Clã', 40)">
@@ -406,8 +393,7 @@ footer {
     </div>
 
     <div class="kit">
-        <img src="imagens/super-clan.png" class="kit-image" alt="Kit Super Clã">
-        <div class="icon">👑</div>
+        <img class="kit-image" src="imagens/super_cla.jpg" alt="Kit Super Clã">
         <h2>Kit Super Clã</h2>
         <div class="price">R$ 65,00</div>
         <button class="buy" onclick="abrirCompra('Kit Super Clã', 65)">
@@ -416,8 +402,7 @@ footer {
     </div>
 
     <div class="kit">
-        <img src="imagens/astraly.png" class="kit-image" alt="Kit Astraly">
-        <div class="icon">🌌</div>
+        <img class="kit-image" src="imagens/astraly.jpg" alt="Kit Astraly">
         <h2>Kit Astraly</h2>
         <div class="price">R$ 75,00</div>
         <button class="buy" onclick="abrirCompra('Kit Astraly', 75)">
@@ -437,53 +422,48 @@ footer {
 
 <div class="modal" id="modalCompra">
 
-<div class="modal-box">
+    <div class="modal-box">
 
-<h2 id="nomeKit">Comprar Kit</h2>
+        <h2 id="nomeKit">Comprar Kit</h2>
 
-<p class="description">
-Informe seu nick do Minecraft e a quantidade desejada.
-</p>
+        <p class="description">
+            Informe seu nick do Minecraft e a quantidade desejada.
+        </p>
 
-<label for="nick">
-Nick do Minecraft
-</label>
+        <label for="nick">Nick do Minecraft</label>
 
-<input
-    id="nick"
-    type="text"
-    maxlength="30"
-    placeholder="Digite seu nick"
->
+        <input
+            id="nick"
+            type="text"
+            maxlength="30"
+            placeholder="Digite seu nick"
+        >
 
-<label for="quantidade">
-Quantidade
-</label>
+        <label for="quantidade">Quantidade</label>
 
-<input
-    id="quantidade"
-    type="number"
-    min="1"
-    value="1"
-    oninput="atualizarTotal()"
->
+        <input
+            id="quantidade"
+            type="number"
+            min="1"
+            value="1"
+            oninput="atualizarTotal()"
+        >
 
-<div class="total">
-Total:
-<strong id="total">
-R$ 0,00
-</strong>
-</div>
+        <div class="total">
+            Total:
+            <strong id="total">R$ 0,00</strong>
+        </div>
 
-<button class="confirm" onclick="finalizarCompra()">
-CONTINUAR
-</button>
+        <button class="confirm" onclick="finalizarCompra()">
+            CONTINUAR
+        </button>
 
-<button class="cancel" onclick="fecharCompra()">
-CANCELAR
-</button>
+        <button class="cancel" onclick="fecharCompra()">
+            CANCELAR
+        </button>
 
-</div>
+    </div>
+
 </div>
 
 
@@ -491,88 +471,89 @@ CANCELAR
 
 <div class="modal" id="modalResumo">
 
-<div class="modal-box">
+    <div class="modal-box">
 
-<h2>📋 Resumo do pedido</h2>
+        <h2>📋 Resumo do pedido</h2>
 
-<div class="summary">
+        <div class="summary">
 
-<div>
-<strong>Kit:</strong>
-<span id="resumoKit"></span>
-</div>
+            <div>
+                <strong>Kit:</strong>
+                <span id="resumoKit"></span>
+            </div>
 
-<div>
-<strong>Nick:</strong>
-<span id="resumoNick"></span>
-</div>
+            <div>
+                <strong>Nick:</strong>
+                <span id="resumoNick"></span>
+            </div>
 
-<div>
-<strong>Quantidade:</strong>
-<span id="resumoQuantidade"></span>
-</div>
+            <div>
+                <strong>Quantidade:</strong>
+                <span id="resumoQuantidade"></span>
+            </div>
 
-<div>
-<strong>Subtotal:</strong>
-<span id="resumoSubtotal"></span>
-</div>
+            <div>
+                <strong>Subtotal:</strong>
+                <span id="resumoSubtotal"></span>
+            </div>
 
-<div id="linhaDesconto" style="display:none;">
-<strong>Desconto:</strong>
-<span id="resumoDesconto" class="discount"></span>
-</div>
+            <div id="linhaDesconto" style="display:none;">
+                <strong>Desconto:</strong>
+                <span id="resumoDesconto" class="discount"></span>
+            </div>
 
-<div>
-<strong>Total:</strong>
-<span id="resumoTotal"></span>
-</div>
+            <div>
+                <strong>Total:</strong>
+                <span id="resumoTotal"></span>
+            </div>
 
-</div>
-
-
-<!-- CUPOM -->
-
-<div class="coupon-box">
-
-<div class="coupon-title">
-🎟️ Cupom de desconto
-</div>
-
-<div class="coupon-row">
-
-<input
-    id="cupom"
-    type="text"
-    maxlength="30"
-    placeholder="Digite seu cupom"
->
-
-<button
-    class="coupon-button"
-    onclick="aplicarCupom()"
->
-APLICAR
-</button>
-
-</div>
-
-<div
-    id="couponMessage"
-    class="coupon-message"
-></div>
-
-</div>
+        </div>
 
 
-<button class="confirm" onclick="irParaPix()">
-💠 IR PARA PAGAMENTO
-</button>
+        <!-- CUPOM -->
 
-<button class="cancel" onclick="voltarCompra()">
-VOLTAR
-</button>
+        <div class="coupon-box">
 
-</div>
+            <div class="coupon-title">
+                🎟️ Cupom de desconto
+            </div>
+
+            <div class="coupon-row">
+
+                <input
+                    id="cupom"
+                    type="text"
+                    maxlength="30"
+                    placeholder="Digite seu cupom"
+                >
+
+                <button
+                    class="coupon-button"
+                    onclick="aplicarCupom()"
+                >
+                    APLICAR
+                </button>
+
+            </div>
+
+            <div
+                id="couponMessage"
+                class="coupon-message"
+            ></div>
+
+        </div>
+
+
+        <button class="confirm" onclick="irParaPix()">
+            💠 IR PARA PAGAMENTO
+        </button>
+
+        <button class="cancel" onclick="voltarCompra()">
+            VOLTAR
+        </button>
+
+    </div>
+
 </div>
 
 
@@ -580,99 +561,101 @@ VOLTAR
 
 <div class="modal" id="modalPix">
 
-<div class="modal-box">
+    <div class="modal-box">
 
-<h2>💠 Pagamento via Pix</h2>
+        <h2>💠 Pagamento via Pix</h2>
 
-<p class="description">
-Faça o Pix exatamente no valor indicado abaixo.
-</p>
+        <p class="description">
+            Faça o Pix exatamente no valor indicado abaixo.
+        </p>
 
-<div class="summary">
+        <div class="summary">
 
-<div>
-<strong>Kit:</strong>
-<span id="pixKit"></span>
-</div>
+            <div>
+                <strong>Kit:</strong>
+                <span id="pixKit"></span>
+            </div>
 
-<div>
-<strong>Nick:</strong>
-<span id="pixNick"></span>
-</div>
+            <div>
+                <strong>Nick:</strong>
+                <span id="pixNick"></span>
+            </div>
 
-<div>
-<strong>Quantidade:</strong>
-<span id="pixQuantidade"></span>
-</div>
+            <div>
+                <strong>Quantidade:</strong>
+                <span id="pixQuantidade"></span>
+            </div>
 
-<div>
-<strong>Valor:</strong>
-<span id="pixTotal"></span>
-</div>
+            <div>
+                <strong>Valor:</strong>
+                <span id="pixTotal"></span>
+            </div>
 
-</div>
+        </div>
 
-<div class="pix-box">
+        <div class="pix-box">
 
-<strong>Chave Pix:</strong>
+            <strong>Chave Pix:</strong>
 
-<div class="pix-key" id="pixKey">
-437144b6-5d40-4f01-b803-c33d1bf041c0
-</div>
+            <div class="pix-key" id="pixKey">
+                437144b6-5d40-4f01-b803-c33d1bf041c0
+            </div>
 
-<button
-    class="pix-button"
-    onclick="copiarPix()"
->
-📋 COPIAR CHAVE PIX
-</button>
+            <button
+                class="pix-button"
+                onclick="copiarPix()"
+            >
+                📋 COPIAR CHAVE PIX
+            </button>
 
-</div>
+        </div>
 
-<div class="order-code">
+        <div class="order-code">
 
-<strong>Número do pedido:</strong>
-<span id="numeroPedido"></span>
+            <strong>Número do pedido:</strong>
 
-</div>
+            <span id="numeroPedido"></span>
 
-<div class="instructions">
+        </div>
 
-<strong>
-📋 Depois de realizar o pagamento:
-</strong>
+        <div class="instructions">
 
-<br><br>
+            <strong>
+                📋 Depois de realizar o pagamento:
+            </strong>
 
-1. Tire o comprovante do Pix.<br>
+            <br><br>
 
-2. Entre no servidor oficial do Discord da
-<strong>DARK NIGHT</strong>.<br>
+            1. Tire o comprovante do Pix.<br>
 
-3. Abra um <strong>ticket de compra</strong>.<br>
+            2. Entre no servidor oficial do Discord da
+            <strong>DARK NIGHT</strong>.<br>
 
-4. Envie o comprovante do Pix no ticket.<br>
+            3. Abra um <strong>ticket de compra</strong>.<br>
 
-5. Informe seu <strong>Nick do Minecraft</strong>.<br>
+            4. Envie o comprovante do Pix no ticket.<br>
 
-6. Informe o <strong>número do pedido</strong> acima.<br>
+            5. Informe seu <strong>Nick do Minecraft</strong>.<br>
 
-7. Aguarde um ADM verificar o pagamento e liberar seu kit.
+            6. Informe o <strong>número do pedido</strong> acima.<br>
 
-</div>
+            7. Aguarde um ADM verificar o pagamento e liberar seu kit.
 
-<div class="success">
+        </div>
 
-⚠️ O kit será entregue somente após a administração
-confirmar o pagamento.
+        <div class="success">
 
-</div>
+            ⚠️ O kit será entregue somente após a administração
+            confirmar o pagamento.
 
-<button class="cancel" onclick="fecharPix()">
-FECHAR
-</button>
+        </div>
 
-</div>
+        <button class="cancel" onclick="fecharPix()">
+            FECHAR
+        </button>
+
+    </div>
+
 </div>
 
 
@@ -683,15 +666,10 @@ FECHAR
 🎟️ CUPONS
 ==================================================
 
-COMO ADICIONAR:
-
-"NOME_DO_CUPOM": porcentagem
+"NOME": DESCONTO EM %
 
 Exemplo:
-
 "DARK10": 10
-
-significa 10% de desconto.
 
 */
 
@@ -721,15 +699,10 @@ let descontoPercentual = 0;
 let pedido = {
 
     nick: "",
-
     quantidade: 1,
-
     subtotal: 0,
-
     desconto: 0,
-
     total: 0,
-
     numero: ""
 
 };
@@ -764,12 +737,13 @@ function abrirCompra(nome, preco) {
 
     document.getElementById("modalCompra")
         .style.display = "flex";
+
 }
 
 
 /*
 ==================================================
-CALCULAR TOTAL
+CALCULAR TOTAL DA PRIMEIRA TELA
 ==================================================
 */
 
@@ -789,6 +763,7 @@ function atualizarTotal() {
 
         document.getElementById("quantidade").value =
             1;
+
     }
 
     let total =
@@ -796,6 +771,7 @@ function atualizarTotal() {
 
     document.getElementById("total").innerText =
         formatarPreco(total);
+
 }
 
 
@@ -808,14 +784,16 @@ FORMATAR PREÇO
 function formatarPreco(valor) {
 
     return "R$ " +
-        valor.toFixed(2)
-        .replace(".", ",");
+        valor
+            .toFixed(2)
+            .replace(".", ",");
+
 }
 
 
 /*
 ==================================================
-CALCULAR DESCONTO
+CALCULAR PEDIDO
 ==================================================
 */
 
@@ -862,8 +840,8 @@ function aplicarCupom() {
 
     let codigo =
         campo.value
-        .trim()
-        .toUpperCase();
+            .trim()
+            .toUpperCase();
 
     let mensagem =
         document.getElementById("couponMessage");
@@ -878,11 +856,15 @@ function aplicarCupom() {
             "#ff7777";
 
         return;
+
     }
 
 
     if (
-        CUPONS.hasOwnProperty(codigo)
+        Object.prototype.hasOwnProperty.call(
+            CUPONS,
+            codigo
+        )
     ) {
 
         cupomAplicado =
@@ -953,7 +935,9 @@ function atualizarResumo() {
 
 
     let linha =
-        document.getElementById("linhaDesconto");
+        document.getElementById(
+            "linhaDesconto"
+        );
 
 
     if (
@@ -964,8 +948,9 @@ function atualizarResumo() {
             "block";
 
 
-        document.getElementById("resumoDesconto")
-            .innerText =
+        document.getElementById(
+            "resumoDesconto"
+        ).innerText =
             "-" +
             formatarPreco(
                 valores.desconto
@@ -1004,6 +989,7 @@ function gerarNumeroPedido() {
         agora.slice(-6) +
         "-" +
         aleatorio;
+
 }
 
 
@@ -1015,9 +1001,11 @@ FECHAR COMPRA
 
 function fecharCompra() {
 
-    document.getElementById("modalCompra")
-        .style.display =
+    document.getElementById(
+        "modalCompra"
+    ).style.display =
         "none";
+
 }
 
 
@@ -1031,14 +1019,15 @@ function finalizarCompra() {
 
     let nick =
         document.getElementById("nick")
-        .value
-        .trim();
+            .value
+            .trim();
 
 
     let quantidade =
         Number(
-            document.getElementById("quantidade")
-            .value
+            document.getElementById(
+                "quantidade"
+            ).value
         );
 
 
@@ -1049,6 +1038,7 @@ function finalizarCompra() {
         );
 
         return;
+
     }
 
 
@@ -1062,6 +1052,7 @@ function finalizarCompra() {
         );
 
         return;
+
     }
 
 
@@ -1088,115 +1079,27 @@ function finalizarCompra() {
         gerarNumeroPedido();
 
 
-    document.getElementById("resumoKit")
-        .innerText =
+    document.getElementById(
+        "resumoKit"
+    ).innerText =
         kitSelecionado;
 
 
-    document.getElementById("resumoNick")
-        .innerText =
+    document.getElementById(
+        "resumoNick"
+    ).innerText =
         nick;
 
 
-    document.getElementById("resumoQuantidade")
-        .innerText =
+    document.getElementById(
+        "resumoQuantidade"
+    ).innerText =
         quantidade;
 
 
     atualizarResumo();
 
 
-    document.getElementById("modalCompra")
-        .style.display =
-        "none";
-
-
-    document.getElementById("modalResumo")
-        .style.display =
-        "flex";
-
-}
-
-
-/*
-==================================================
-IR PARA PIX
-==================================================
-*/
-
-function irParaPix() {
-
-    let valores =
-        calcularPedido();
-
-
-    pedido.subtotal =
-        valores.subtotal;
-
-    pedido.desconto =
-        valores.desconto;
-
-    pedido.total =
-        valores.total;
-
-
-    document.getElementById("modalResumo")
-        .style.display =
-        "none";
-
-
-    document.getElementById("pixKit")
-        .innerText =
-        kitSelecionado;
-
-
-    document.getElementById("pixNick")
-        .innerText =
-        pedido.nick;
-
-
-    document.getElementById("pixQuantidade")
-        .innerText =
-        pedido.quantidade;
-
-
-    document.getElementById("pixTotal")
-        .innerText =
-        formatarPreco(
-            pedido.total
-        );
-
-
-    document.getElementById("numeroPedido")
-        .innerText =
-        pedido.numero;
-
-
-    document.getElementById("modalPix")
-        .style.display =
-        "flex";
-
-}
-
-
-/*
-==================================================
-VOLTAR
-==================================================
-*/
-
-function voltarCompra() {
-
-    document.getElementById("modalResumo")
-        .style.display =
-        "none";
-
-
-    document.getElementById("modalCompra")
-        .style.display =
-        "flex";
-
-}
-
-
-    
+    document.getElementById(
+        "modalCompra"
+    ).sty    
